@@ -6,13 +6,15 @@ USE web_course_db;
 
 CREATE TABLE course_tb(
 course_id INT NOT NULL AUTO_INCREMENT,
-course_name VARCHAR(150) NOT NULL DEFAULT 'none',
-course_thumbnail VARCHAR(200) NOT NULL DEFAULT 'none',
+course_name VARCHAR(50) NOT NULL DEFAULT 'none',
+course_thumbnail VARCHAR(100) NOT NULL DEFAULT 'none',
 id_author INT NOT NULL DEFAULT '0',
-course_duration INT NOT NULL DEFAULT '0',
-course_description VARCHAR(200) NOT NULL DEFAULT 'none',
+course_duration VARCHAR(10) NOT NULL DEFAULT 'none',
+course_description VARCHAR(100) NOT NULL DEFAULT 'none',
+course_status VARCHAR(10) NOT NULL DEFAULT 'active',
 PRIMARY KEY (course_id)
 )ENGINE=InnoDB;
+
 
 INSERT INTO course_tb(course_id,course_name,course_thumbnail,id_author,course_duration,course_description)
 VALUES(1,'PHP','php.png',1,'48 hours','berisi belajar dasar tentang PHP'),
@@ -25,9 +27,9 @@ SELECT * FROM course_tb; --untuk menampilkan seluruh dari table course_tb
 
 CREATE TABLE content_tb(
 content_id INT NOT NULL AUTO_INCREMENT,
-content_name VARCHAR(100) NOT NULL DEFAULT 'none',
-video_link VARCHAR(200) NOT NULL DEFAULT 'none',
-content_type VARCHAR(100) NOT NULL DEFAULT 'none',
+content_name VARCHAR(50) NOT NULL DEFAULT 'none',
+video_link VARCHAR(70) NOT NULL DEFAULT 'none',
+content_type VARCHAR(20) NOT NULL DEFAULT 'none',
 id_course INT NOT NULL DEFAULT '0',
 PRIMARY KEY (content_id)
 )ENGINE=InnoDB;
